@@ -1,0 +1,23 @@
+#!/bin/bash
+gcc sequentialTest.c -o sequentialTest.o
+mpicc blocking_point_mpi.c -o blocking_point_mpi.o
+
+for ((j=10; j<=1000; j*=10)); do
+#for i in 1 2 4 8 10 16 20; do
+# Run both scripts and redirect output to temporary files
+# **** thread count does nothing in sequential script ****
+./sequentialTest.o "$j" "$j" "$j" > output1.txt 
+mpiexec -n 2 ./blocking_point_mpi.o "$j" "$j" "$j" > output2.txt
+
+# Compare the output files
+if diff output1.txt output2.txt &> /dev/null; then
+    echo "Outputs are identical for 1 threads, $j x $j at $j generations."
+else
+    echo "Outputs are different for 1 threads, $j x $j at $j generations."
+fi
+
+# Clean up temporary files
+rm output1.txt output2.txt
+#done
+done
+rm blocking_point_mpi.o sequentialTest.o

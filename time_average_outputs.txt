@@ -1,0 +1,9 @@
+Average Output for 'mpiexec --oversubscribe -n 1 ./hw3.o 1024 1024 1000 2>/dev/null': 15.434854000
+Average Output for 'mpiexec --oversubscribe -n 2 ./hw3.o 1024 1024 1000 2>/dev/null': 8.1770534000
+Average Output for 'mpiexec --oversubscribe -n 4 ./hw3.o 1024 1024 1000 2>/dev/null': 6.9216394000
+Average Output for 'mpiexec --oversubscribe -n 8 ./hw3.o 1024 1024 1000 2>/dev/null': 6.7502664000
+Average Output for 'mpiexec --oversubscribe -n 16 ./hw3.o 1024 1024 1000 2>/dev/null': 6.7325600000
+Average Output for 'mpiexec --oversubscribe -n 32 ./hw3.o 1024 1024 1000 2>/dev/null': 6.6245914000
+Average Output for 'mpiexec --oversubscribe -n 64 ./hw3.o 1024 1024 1000 2>/dev/null': 6.5772196000
+Average Output for 'mpiexec --oversubscribe -n 128 ./hw3.o 1024 1024 1000 2>/dev/null': 6.9794270000
+Average Output for 'mpiexec --oversubscribe -n 256 ./hw3.o 1024 1024 1000 2>/dev/null': 8.7720122000
